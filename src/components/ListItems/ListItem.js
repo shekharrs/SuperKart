@@ -1,27 +1,24 @@
 import AddToCartIcon from "../../assets/icons/add_cart.svg";
 import { Fragment, useState } from "react";
 import Modal from "../UI/Modal";
+import { useDispatch, useSelector } from "react-redux";
+import { addItemHandler, removeItemHandler } from "../../actions";
 
-const ListItem = ({ data, onAdd, onRemove }) => {
+const ListItem = ({ data }) => {
   // const [counter, setCounter] = useState(0);
   const [showModal, setShowModal] = useState(false);
 
+  const item = useSelector(state => state.items.find(item => item.id === data.id))
+  const dispatch = useDispatch()
+
   const increaseCounterByOne = event => {
     event.stopPropagation();
-    onAdd(data.id)
-    // setCounter(counter + 1);
+    dispatch(addItemHandler(data))
   };
 
   const decreaseCounterByOne = event => {
     event.stopPropagation();
-    onRemove(data.id);
-    // if (counter <= 0) {
-    //   return;
-    // }
-    // if (counter == 1) {
-    //   onRemove(data.id);
-    // }
-    // setCounter(counter - 1);
+    dispatch(removeItemHandler(data.id))
   };
 
   const handleModal = () => {
@@ -48,7 +45,7 @@ const ListItem = ({ data, onAdd, onRemove }) => {
           </div>
         </div>
 
-        {data.quantity < 1 ? (
+        {!item || item?.quantity < 1 ? (
           <button className={"cart-add"} onClick={increaseCounterByOne}>
             <span>Add to cart</span>
             <img src={AddToCartIcon} alt="cart icon" />
@@ -58,7 +55,7 @@ const ListItem = ({ data, onAdd, onRemove }) => {
             <button onClick={decreaseCounterByOne}>
               <span>-</span>
             </button>
-            <span>{data.quantity}</span>
+            <span>{item.quantity}</span>
             <button onClick={increaseCounterByOne}>
               <span>+</span>
             </button>
@@ -85,7 +82,7 @@ const ListItem = ({ data, onAdd, onRemove }) => {
                 </small>
                 <p>{data.description}</p>
 
-                {data.quantity < 1 ? (
+                {!item || item?.quantity < 1 ? (
                   <button className={"cart-add card-add__modal"} onClick={increaseCounterByOne}>
                     <span>Add to cart</span>
                     <img src={AddToCartIcon} alt="cart icon" />
@@ -95,7 +92,7 @@ const ListItem = ({ data, onAdd, onRemove }) => {
                     <button onClick={decreaseCounterByOne}>
                       <span>-</span>
                     </button>
-                    <span>{data.quantity}</span>
+                    <span>{item.quantity}</span>
                     <button onClick={increaseCounterByOne}>
                       <span>+</span>
                     </button>
