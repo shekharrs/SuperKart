@@ -2,16 +2,22 @@ import React, { useEffect, useState } from "react";
 import ListItem from "../ListItems/ListItem";
 import axios from "axios";
 import Loader from "../UI/Loader";
+import { useParams } from "react-router-dom";
 
 const Products = () => {
   const [items, setItems] = useState([]);
   const [loader, setLoader] = useState(true);
+  const params = useParams()
 
   useEffect(() => {
     async function fetchItems() {
       try {
+        let slug = `items.json`
+        if(params.category) {
+          slug = `items-${params.category}.json`
+        }
         const response = await axios.get(
-          `https://react-series-5c6bf-default-rtdb.firebaseio.com/items.json`
+          `https://super-kart-51457-default-rtdb.firebaseio.com/${slug}`
         );
         const data = response.data;
         const transformedData = data.map((item, index) => {
@@ -32,7 +38,12 @@ const Products = () => {
     }
 
     fetchItems();
-  }, []);
+
+    return () => {
+      setItems([])
+      setLoader(true)
+    }
+  }, [params]);
 
   return (
     <>
@@ -49,3 +60,29 @@ const Products = () => {
 };
 
 export default Products;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

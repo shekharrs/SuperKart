@@ -9,7 +9,7 @@ const App = () => {
       <Header/>
       <Subheader/>
       <Routes>
-        <Route path="/" element={<Products/>}/>
+        <Route path="/:category?" element={<Products/>}/>
       </Routes>
       
     </div>

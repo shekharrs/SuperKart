@@ -57,6 +57,114 @@
             "thumbnail": "Goldring.jpg",
             "title": "Pierced Owl Rose"
         }
+    ],
+    "items-category-1": [
+        {
+            "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+            "discountedPrice": 540,
+            "price": 779,
+            "thumbnail": "LaptopBag.jpg",
+            "title": "Laptops Bag"
+        },
+        {
+            "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+            "discountedPrice": 456,
+            "price": 1220,
+            "thumbnail": "MensTshirt.jpg",
+            "title": "Mens T-Shirts"
+        },
+        {
+            "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+            "discountedPrice": 999,
+            "price": 1599,
+            "thumbnail": "MensJacket.jpg",
+            "title": "Mens Cotton Jacket"
+        },
+        {
+            "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+            "discountedPrice": 509,
+            "price": 999,
+            "thumbnail": "Tshirt.jpg",
+            "title": "Mens Casual Slim Fit"
+        }
+    ],
+    "items-category-2": [
+        {
+            "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+            "discountedPrice": 899,
+            "price": 1695,
+            "thumbnail": "Bracelet.jpg",
+            "title": "Silver Bracelet"
+        },
+        {
+            "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
+            "discountedPrice": 1499,
+            "price": 2168,
+            "thumbnail": "Silver.jpg",
+            "title": "Petite Micropave"
+        },
+        {
+            "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
+            "discountedPrice": 1299,
+            "price": 1799,
+            "thumbnail": "Ring.jpg",
+            "title": "Gold Plated Princess"
+        
+        }
+    ],
+    "items-category-3": [
+        {
+            "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
+            "discountedPrice": 1499,
+            "price": 2168,
+            "thumbnail": "Silver.jpg",
+            "title": "Petite Micropave"
+        },
+        {
+            "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
+            "discountedPrice": 1299,
+            "price": 1799,
+            "thumbnail": "Ring.jpg",
+            "title": "Gold Plated Princess"
+        
+        },
+        {
+            "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
+            "discountedPrice": 1899,
+            "price": 2999,
+            "thumbnail": "Goldring.jpg",
+            "title": "Pierced Owl Rose"
+        }
+    ],
+    "items-category-4": [
+        {
+            "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+            "discountedPrice": 999,
+            "price": 1599,
+            "thumbnail": "MensJacket.jpg",
+            "title": "Mens Cotton Jacket"
+        },
+        {
+            "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+            "discountedPrice": 509,
+            "price": 999,
+            "thumbnail": "Tshirt.jpg",
+            "title": "Mens Casual Slim Fit"
+        },
+        {
+            "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+            "discountedPrice": 899,
+            "price": 1695,
+            "thumbnail": "Bracelet.jpg",
+            "title": "Silver Bracelet"
+        },
+        {
+            "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
+            "discountedPrice": 1499,
+            "price": 2168,
+            "thumbnail": "Silver.jpg",
+            "title": "Petite Micropave"
+        }
     ]
 }
 
