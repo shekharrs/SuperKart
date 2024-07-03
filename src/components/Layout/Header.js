@@ -1,8 +1,12 @@
 import React from 'react'
 import Cart from '../Cart'
 import SearchBox from '../UI/Search'
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
+    
+    const naviagate = useNavigate()
+
   return (
     <header>
     <div className="nav-brand">
@@ -22,6 +26,7 @@ const Header = () => {
     <div className="searchBox-container">
        <SearchBox/>
     </div>
+    <button className='login-btn' onClick={() => naviagate("/login")}>Login</button>
     <div className="cart-container">
         <Cart/>
     </div>
