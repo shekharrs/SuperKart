@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
+import Loader from "../UI/Loader";
 
 const AuthIndex = ({ type }) => {
   const [details, setDetails] = useState({
     email: "",
     password: "",
   });
+
+  const [loader, setLoader] = useState(false)
 
   const handleInput = (e) => {
     setDetails({
@@ -24,9 +27,10 @@ const AuthIndex = ({ type }) => {
   };
 
   const signupWithEmailAndPassword = async () => {
+    setLoader(true)
     try {
       const response = await axios.post(
-        `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[AIzaSyBI3NHUCNkCLLLYornYZSIdQnnCLBTCIr4]`,
+        `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBI3NHUCNkCLLLYornYZSIdQnnCLBTCIr4`,
         {
           email: details.email,
           password: details.password,
@@ -37,9 +41,13 @@ const AuthIndex = ({ type }) => {
     } catch (error) {
       console.log(error.response);
     }
+    finally {
+      setLoader(false)
+    }
   };
 
   return (
+    <Fragment>
     <div className="auth-container">
       <div className="auth-container--box">
         <div className="tab-selector">
@@ -79,6 +87,8 @@ const AuthIndex = ({ type }) => {
         </form>
       </div>
     </div>
+    { loader && <Loader/>}
+    </Fragment>
   );
 };
 
