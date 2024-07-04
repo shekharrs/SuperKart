@@ -1,7 +1,8 @@
-import { Fragment, useState } from "react";
-import { NavLink } from "react-router-dom";
-import axios from "axios";
+import { Fragment, useEffect, useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import Loader from "../UI/Loader";
+import { useDispatch } from "react-redux";
+import { loginWithEmailAndPassword, signupWithEmailAndPassword } from "../../actions/auth";
 
 const AuthIndex = ({ type }) => {
   const [details, setDetails] = useState({
@@ -10,6 +11,8 @@ const AuthIndex = ({ type }) => {
   });
 
   const [loader, setLoader] = useState(false)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const handleInput = (e) => {
     setDetails({
@@ -18,33 +21,49 @@ const AuthIndex = ({ type }) => {
     });
   };
 
+  useEffect(() => {
+    return () => {
+      setLoader(false)
+      setDetails({
+        email: "",
+        password: ""
+      })
+    }
+  }, [])
+
   const handleSubmission = (e) => {
     e.preventDefault();
     console.log(details);
     if (type === "signup") {
-      signupWithEmailAndPassword();
+      setLoader(true)
+      dispatch(signupWithEmailAndPassword(details, data => {
+        if(data.error) {
+          console.log(data.error)
+          alert("some error occurred")
+        }
+        else {
+          console.log("Successfully Signed up!")
+          navigate('/')
+        }
+        setLoader(false)
+      }))
+    }
+    else if(type === "login") {
+      setLoader(true)
+      dispatch(loginWithEmailAndPassword(details, data => {
+        if(data.error) {
+          console.log(data.response)
+          alert(data?.response?.data?.error?.message || "Some error occurred") 
+        }
+        else {
+          // console.log("Successfully logged in!")
+          navigate('/')
+        }
+        setLoader(false)
+      }))
     }
   };
 
-  const signupWithEmailAndPassword = async () => {
-    setLoader(true)
-    try {
-      const response = await axios.post(
-        `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBI3NHUCNkCLLLYornYZSIdQnnCLBTCIr4`,
-        {
-          email: details.email,
-          password: details.password,
-          returnSecureToken: true,
-        }
-      );
-      console.log(response);
-    } catch (error) {
-      console.log(error.response);
-    }
-    finally {
-      setLoader(false)
-    }
-  };
 
   return (
     <Fragment>

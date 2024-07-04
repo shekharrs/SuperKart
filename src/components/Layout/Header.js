@@ -2,10 +2,12 @@ import React from 'react'
 import Cart from '../Cart'
 import SearchBox from '../UI/Search'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const Header = () => {
     
     const naviagate = useNavigate()
+    const authState = useSelector(state => state.auth)
 
   return (
     <header>
@@ -26,7 +28,12 @@ const Header = () => {
     <div className="searchBox-container">
        <SearchBox/>
     </div>
-    <button className='login-btn' onClick={() => naviagate("/login")}>Login</button>
+    {
+        authState && authState.idToken ?
+        <button className='login-btn'>User Profile</button>
+        :
+        <button className='login-btn' onClick={() => naviagate("/login")}>Login</button>
+    }
     <div className="cart-container">
         <Cart/>
     </div>

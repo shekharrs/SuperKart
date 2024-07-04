@@ -8,7 +8,7 @@ const ListItem = ({ data }) => {
   // const [counter, setCounter] = useState(0);
   const [showModal, setShowModal] = useState(false);
 
-  const item = useSelector(state => state.items.find(item => item.id === data.id))
+  const item = useSelector(state => state.cart.items.find(item => item.id === data.id))
   const dispatch = useDispatch()
 
   const increaseCounterByOne = event => {

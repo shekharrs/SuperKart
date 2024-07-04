@@ -9,9 +9,9 @@ const Cart = () => {
 
     const [showModal, setShowModal] = useState(false);
     const [orderModal, setOrderModal] = useState(false);
-    const items = useSelector(state => state.items)
+    const items = useSelector(state => state.cart.items)
+    const totalAmount = useSelector(state => state.cart.totalAmount)
     const dispatch = useDispatch()
-    const totalAmount = useSelector(state => state.totalAmount)
 
     const handleModal = () => {
         setShowModal(previousState => !previousState)
