@@ -2,13 +2,20 @@ import React from 'react'
 import Cart from '../Cart'
 import SearchBox from '../UI/Search'
 import { useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { logout } from '../../actions/auth'
+import { BsEmojiSunglasses } from "react-icons/bs";
+import { RiLogoutBoxRFill } from "react-icons/ri";
 
 const Header = () => {
     
     const naviagate = useNavigate()
     const authState = useSelector(state => state.auth)
+    const dispatch = useDispatch()
 
+    const logoutHandler = () => {
+        dispatch(logout())
+    }
   return (
     <header>
     <div className="nav-brand">
@@ -30,7 +37,10 @@ const Header = () => {
     </div>
     {
         authState && authState.idToken ?
-        <button className='login-btn'>User Profile</button>
+           <div className="user-actions">
+                <button title="User Profile" className="material-icons"><BsEmojiSunglasses /></button>
+                <button onClick={logoutHandler} title="Logout" className="material-icons"><RiLogoutBoxRFill /></button>
+            </div>
         :
         <button className='login-btn' onClick={() => naviagate("/login")}>Login</button>
     }

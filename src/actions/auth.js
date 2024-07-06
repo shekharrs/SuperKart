@@ -72,6 +72,7 @@ export const checkIsLoggedIn = callback => {
         type: "LOGIN",
         payload: {
           idToken: token,
+          localId: response.data.users[0].localId,
           ...response.data
         },
       });
@@ -83,6 +84,15 @@ export const checkIsLoggedIn = callback => {
       });
     }
   };
+}
+
+export const logout = () => {
+  return dispatch => {
+    localStorage.removeItem("token")
+    dispatch({
+      type: "LOGOUT"
+    })
+  }
 }
 
 
