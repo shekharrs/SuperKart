@@ -32,7 +32,6 @@ const Cart = () => {
                 alert(response.data.error || "Some error occurred, please try again")
             }
             else {
-                console.log(response.data)
                 setOrderId(response.data.name)
                 setOrderModal(previous => !previous)
                 setShowModal(false);

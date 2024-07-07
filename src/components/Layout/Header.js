@@ -4,8 +4,8 @@ import SearchBox from '../UI/Search'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../../actions/auth'
-import { BsEmojiSunglasses } from "react-icons/bs";
-import { RiLogoutBoxRFill } from "react-icons/ri";
+import { FaUserAlt } from "react-icons/fa";
+import { GrLogout } from "react-icons/gr";
 
 const Header = () => {
     
@@ -38,8 +38,8 @@ const Header = () => {
     {
         authState && authState.idToken ?
            <div className="user-actions">
-                <button title="User Profile" className="material-icons"><BsEmojiSunglasses /></button>
-                <button onClick={logoutHandler} title="Logout" className="material-icons"><RiLogoutBoxRFill /></button>
+                <button title="User Profile" className="material-icons"><FaUserAlt /></button>
+                <button onClick={logoutHandler} title="Logout" className="material-icons"><GrLogout /></button>
             </div>
         :
         <button className='login-btn' onClick={() => naviagate("/login")}>Login</button>
