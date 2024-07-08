@@ -33,7 +33,6 @@ const AuthIndex = ({ type }) => {
 
   const handleSubmission = (e) => {
     e.preventDefault();
-    console.log(details);
     if (type === "signup") {
       setLoader(true)
       dispatch(signupWithEmailAndPassword(details, data => {
